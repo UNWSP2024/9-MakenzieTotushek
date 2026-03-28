@@ -10,7 +10,7 @@
 import random
 def random_number_file():
     number = random.randint(1, 500)
-    random_number = open ('numbers.txt', 'w')
+    random_number = open ('random_numbers.txt', 'w')
     amount = input('How many random numbers would you like added to the file (up to 1000)? ')
     for i in range(int(amount)):
         random_number.write(str(number) + '\n')
