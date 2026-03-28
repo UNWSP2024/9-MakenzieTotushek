@@ -1,3 +1,7 @@
+# Author: Makenzie Totushek
+# Date: 3/27/2026
+# Name: Average Numbers
+
 # Program #3: Average Numbers
 # Assume a file containing a series of integers is named numbers.txt and exists on the computer's disk.
 # (please use the provided numbers.txt)
@@ -12,7 +16,20 @@ def sum_numbers_from_file():
     ######################
     # Add your code here #
     ######################
-    print('In the sum_numbers_from_file function')
+    try:
+        total = 0
+        numbers_file = open('numbers.txt', 'r')
+        numbers = numbers_file.readlines()
+        for line in numbers:
+            number = int(line)
+            total += number
+        print('The total sum of the numbers in the file is ' + str(total))
+    except IOError:
+        print('An error occurred while reading the file.')
+    except ValueError:
+        print('Non-numeric data found in the file.')
+    except:
+        print('An error occurred.')
 
 # You don't need to change anything below this line:
 if __name__ == '__main__':
