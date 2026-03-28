@@ -7,9 +7,14 @@ def count_file_lines():
     ######################
     # Add your code here #
     ######################
-    print('In the count_file_lines function')
+    total = 0
+    names_file = open('names.txt', 'r')
+    name = names_file.readline()
+    while name != '':
+        total += 1
+        name = names_file.readline()
 
-
+    print('There are ' + str(total) + ' names in the file.')
 
 # You don't need to change anything below this line:
 if __name__ == '__main__':
